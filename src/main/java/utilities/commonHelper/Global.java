@@ -1,4 +1,4 @@
-package utilities;
+package utilities.commonHelper;
 
 public class Global {
     private static Global instance;

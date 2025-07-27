@@ -2,8 +2,8 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utilities.DriverManger;
-import utilities.ElementHelper;
+import utilities.driverManger.DriverManger;
+import utilities.commonHelper.ElementHelper;
 
 public class SignInPage {
     WebDriver driver;

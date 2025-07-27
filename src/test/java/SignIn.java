@@ -1,8 +1,8 @@
 import Pages.HomePage;
 import Pages.SignInPage;
 import org.testng.annotations.*;
-import utilities.ExtentReport.ExtentReportListener;
-import utilities.Global;
+import utilities.extentReport.ExtentReportListener;
+import utilities.commonHelper.Global;
 
 @Listeners(ExtentReportListener.class)
 public class SignIn extends BaseTest {

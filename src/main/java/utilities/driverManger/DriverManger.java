@@ -1,17 +1,18 @@
-package utilities;
+package utilities.driverManger;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import utilities.config.LoadProperties;
 
 import java.time.Duration;
 
 public class DriverManger {
       static WebDriver driver ;
      // get it from properities file
-      static String BrowserName=LoadProperties.BROWSER;
+      static String BrowserName= LoadProperties.BROWSER;
       static String URL=LoadProperties.URL;
 
     public  static  void initiation() {

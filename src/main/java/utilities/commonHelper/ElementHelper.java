@@ -1,4 +1,4 @@
-package utilities;
+package utilities.commonHelper;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;

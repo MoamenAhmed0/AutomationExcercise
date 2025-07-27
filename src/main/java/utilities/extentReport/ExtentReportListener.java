@@ -1,10 +1,10 @@
-package utilities.ExtentReport;
+package utilities.extentReport;
 
 import com.aventstack.extentreports.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.*;
-import utilities.DriverManger;
+import utilities.driverManger.DriverManger;
 import java.util.Arrays;
 
 public class ExtentReportListener implements ITestListener {

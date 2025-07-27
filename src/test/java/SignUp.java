@@ -1,10 +1,12 @@
 import Pages.HomePage;
 import Pages.SignUpPage;
 
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
-import utilities.ExtentReport.ExtentReportListener;
+import org.testng.annotations.*;
+import utilities.datareaders.DataProviderUtils;
+import utilities.extentReport.ExtentReportListener;
+
+import java.io.IOException;
+import java.util.Iterator;
 
 @Listeners(ExtentReportListener.class)
 public class SignUp extends BaseTest{
@@ -17,7 +19,6 @@ public class SignUp extends BaseTest{
     }
     @Test
     public void signUp() {
-
         /* Test Case steps */
         homepage.clickOnSignup_LoginBtn();
         signUpPage.enterName().enterEmail().
@@ -40,7 +41,47 @@ public class SignUp extends BaseTest{
 
         signUpPage.assertAccountCreatedSuccessfully("https://www.automationexercise.com/account_created","ACCOUNT CREATED!");
 
-
     }
 
+
+     // using Data Provider ...
+     @DataProvider(name = "signupData")
+     public static Iterator<Object[]> signupData() throws IOException {
+         // هنا بنغير  اسم الملف حسب اللي عايزين نشتغل عليه (CSV, Excel, JSON)
+         String filePath = "src/test/resources/Signupdata.json";
+         return DataProviderUtils.getData(filePath);
+     }
+
+    @Test(dataProvider = "signupData")
+    public void signUpWithDataProvider(String title,
+                       String day, String month, String year, String firstName,
+                       String lastName, String address, String country, String state,
+                       String city, String zipcode) {
+
+        homepage.clickOnSignup_LoginBtn();
+        signUpPage.enterName()
+                .enterEmail()
+                .clickSignupButton()
+                .enterTitle(title)
+                .enterPassword()
+                .chooseDays(day)
+                .chooseMonth(month)
+                .chooseYear(year)
+                .checkNewsletter()
+                .checkSpecialOffer()
+                .enterFirstName(firstName)
+                .enterLastName(lastName)
+                .enterAddress(address)
+                .selectCountry(country)
+                .enterState(state)
+                .enterCity(city)
+                .enterZipcode(zipcode)
+                .enterMobileNumber()
+                .clickCreateAccountBtn();
+
+        signUpPage.assertAccountCreatedSuccessfully(
+                "https://www.automationexercise.com/account_created",
+                "ACCOUNT CREATED!"
+        );
+    }
 }

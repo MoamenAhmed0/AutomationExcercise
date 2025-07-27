@@ -2,12 +2,10 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import utilities.AssertionHelper;
-import utilities.DriverManger;
-import utilities.ElementHelper;
-import utilities.Global;
+import utilities.commonHelper.AssertionHelper;
+import utilities.driverManger.DriverManger;
+import utilities.commonHelper.ElementHelper;
+import utilities.commonHelper.Global;
 
 
 public class SignUpPage {
