@@ -1,5 +1,4 @@
 package utilities.driverManger;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,16 +7,16 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import utilities.config.LoadProperties;
 
 import java.time.Duration;
-
 public class DriverManger {
-      static WebDriver driver ;
-     // get it from properities file
-      static String BrowserName= LoadProperties.BROWSER;
-      static String URL=LoadProperties.URL;
+    private static WebDriver driver;
+    // get it from properties file
+    static String BrowserName = LoadProperties.BROWSER;
+    static String URL = LoadProperties.URL;
 
-    public  static  void initiation() {
-
-        if (BrowserName.trim().equalsIgnoreCase("chrome"))  {
+    // private constructor prevents creating new instances
+    private DriverManger() {}
+    public static void initiation() {
+        if (BrowserName.trim().equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         } else if (BrowserName.trim().equalsIgnoreCase("firefox")) {
@@ -28,8 +27,8 @@ public class DriverManger {
             driver = new EdgeDriver();
         } else if (BrowserName.trim().equalsIgnoreCase("remote")) {
 
-  //      driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"));
-        }else{
+            //      driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"));
+        } else {
             System.out.print(" browser name not correct!!");
         }
         driver.get(URL);
@@ -37,14 +36,14 @@ public class DriverManger {
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
     }
-
-    public  static WebDriver  getDriver(){
-        if (driver==null){
+    public static WebDriver getDriver() {
+        if (driver == null) {
             initiation();
         }
         return driver;
     }
-    public static  void  closeDriver(){
+
+    public static void closeDriver() {
         driver.quit();
     }
 }

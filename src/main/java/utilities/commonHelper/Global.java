@@ -1,12 +1,9 @@
 package utilities.commonHelper;
 
 public class Global {
-    private static Global instance;
-    private String password;
-    private String name;
-    private String mobileNumber;
-    private String email;
-    private String nid;
+    private static Global instance; private String password;
+    private String name; private String mobileNumber;
+    private String email; private String nid;
 
     // Private constructor to prevent new instances
     private Global() {}

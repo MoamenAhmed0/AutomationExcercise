@@ -51,32 +51,19 @@ public class SignUp extends BaseTest{
          String filePath = "src/test/resources/Signupdata.json";
          return DataProviderUtils.getData(filePath);
      }
-
     @Test(dataProvider = "signupData")
     public void signUpWithDataProvider(String title,
                        String day, String month, String year, String firstName,
                        String lastName, String address, String country, String state,
                        String city, String zipcode) {
-
         homepage.clickOnSignup_LoginBtn();
-        signUpPage.enterName()
-                .enterEmail()
-                .clickSignupButton()
-                .enterTitle(title)
-                .enterPassword()
-                .chooseDays(day)
-                .chooseMonth(month)
-                .chooseYear(year)
-                .checkNewsletter()
-                .checkSpecialOffer()
-                .enterFirstName(firstName)
-                .enterLastName(lastName)
+        signUpPage.enterName().enterEmail().clickSignupButton().enterTitle(title).enterPassword()
+                .chooseDays(day).chooseMonth(month).chooseYear(year)
+                .checkNewsletter().checkSpecialOffer()
+                .enterFirstName(firstName).enterLastName(lastName)
                 .enterAddress(address)
-                .selectCountry(country)
-                .enterState(state)
-                .enterCity(city)
-                .enterZipcode(zipcode)
-                .enterMobileNumber()
+                .selectCountry(country).enterState(state).enterCity(city)
+                .enterZipcode(zipcode).enterMobileNumber()
                 .clickCreateAccountBtn();
 
         signUpPage.assertAccountCreatedSuccessfully(
