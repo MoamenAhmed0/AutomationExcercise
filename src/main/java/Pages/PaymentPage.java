@@ -13,7 +13,7 @@ public class PaymentPage {
     By cvc = By.name("cvc");
     By expMonth = By.name("expiry_month");
     By expYear = By.name("expiry_year");
-    By payButton = By.id("submit");
+    By payButton = By.cssSelector("#submit");
     By successMessage = By.cssSelector("#form > div > div > div > p");
 
     public PaymentPage(){
