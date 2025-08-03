@@ -8,7 +8,7 @@ import utilities.config.LoadProperties;
 
 import java.time.Duration;
 public class DriverManger {
-    private static WebDriver driver;
+    public static WebDriver driver;
     // get it from properties file
     static String BrowserName = LoadProperties.BROWSER;
     static String URL = LoadProperties.URL;

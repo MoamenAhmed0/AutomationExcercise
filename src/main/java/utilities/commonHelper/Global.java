@@ -6,7 +6,10 @@ public class Global {
     private String email; private String nid;
 
     // Private constructor to prevent new instances
-    private Global() {}
+    private Global() {
+        setEmail();
+        setPassword();
+    }
     // Singleton pattern
     public static Global getInstance() {
         if (instance == null) {

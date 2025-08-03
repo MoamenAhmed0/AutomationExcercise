@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utilities.driverManger.DriverManger;
 import utilities.commonHelper.ElementHelper;
+import utilities.commonHelper.Global;
+
+
+import static java.util.logging.Logger.global;
 
 public class SignInPage {
     WebDriver driver;
