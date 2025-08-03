@@ -27,7 +27,7 @@ public class ProductsPage {
     }
 
     public void openFirstProduct(){
-        ElementHelper.click(driver, By.xpath("/html/body/section[2]/div[1]/div/div[2]/div/div[5]/div/div[2]/ul/li/a"));
+        ElementHelper.click(driver, By.xpath("//a[@href=\"/product_details/29\"]"));
     }
 
     public void addProductToCartByIndex(int index){
